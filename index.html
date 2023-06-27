@@ -14,6 +14,9 @@
         --complementary: #191818; /*30%, Complementary*/
     }
     
+    html {
+  		scroll-behavior: smooth;
+    }
     html, body {
     	width: 100%;
     	height: 100%;
@@ -21,6 +24,7 @@
     	padding: 0;
     	 
 	}
+    
     body {
     	color: var(--complementary);
     	background-color: var(--complementary);
@@ -77,9 +81,9 @@
     }
     
     .nav li a:hover {
-      	background-color: var(--accent);
       	transition: 0.3s;
       	cursor: pointer;
+        text-shadow: rgba(225,225,225,1) 0px 0px 20px;
     }
     
     .nav {
@@ -90,6 +94,33 @@
         text-align: center;
         z-index: 100;
         
+    }
+    
+    .nav .icon {
+      display: none;
+    }
+    
+    
+    @media screen and (max-width: 491px) {
+      .nav a {display: none;}
+      .nav a.icon {
+        float: right;
+        display: block;
+      }
+    }
+    
+    @media screen and (max-width: 491px) {
+      .nav.responsive {position: relative;}
+      .nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
     }
     
     .homelink {
@@ -163,7 +194,6 @@
     
     .leftArrow,.rightArrow {
     	position: absolute;
-    	top: 50%;
     	transform: translateY(-50%);
     	font-size: 30px;
     	color: var(--dominant);
@@ -229,6 +259,9 @@
 
     }
     
+    .game .subtitle {
+    	text-shadow: rgba(225,225,225,1) 0px 0px 20px;
+    }
     .game img {
     	max-width: 534px;
         max-height: 400px;
@@ -268,24 +301,40 @@
     }
     
     .readMore:hover {
-    	background-color: var(--accent);
+    	
         transition: 0.3s;
+        text-shadow: rgba(225,225,225,1) 0px 0px 20px;
         
     }
 </style>
 </head>
 <body>
-<div class="nav">
+<div class="nav" id="nav">
 	<ul>
     	<li class="homelink"><a href="#">Jack McEvoy</a></li>
         <li><a href="#games">Games</a></li>
     	<li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
+        <a href="javascript:void(0);" class="icon" onclick="hamburgerTime()">
+      		<i class="fa fa-bars"></i>
+    	</a>
     </ul>  
 </div>
+
+<script>
+    function hamburgerTime() {
+      var x = document.getElementById("nav");
+      if (x.className === "nav") {
+        x.className += " responsive";
+      } else {
+        x.className = "nav";
+      }
+     }
+</script>
+
 <section class="name">
 	<div class="title">Jack McEvoy</div>
-	<div class="subtitle"><span class="accentTime">Game</span> Developer</div>
+	<div class="subtitle"><span class="accentTime" style="text-shadow: rgba(225,225,225,0.6) 0px 0px 20px;">Game</span> Developer</div>
     <div class="rightArrow"><i class="fa fa-chevron-right"></i></div>
     <div class="leftArrow"><i class="fa fa-chevron-left"></i></div>
 </section>
@@ -309,26 +358,27 @@
     <div class="game gottagobot">
     	<img src="https://media.discordapp.net/attachments/784390283701256192/1123196020071862282/cinematic.png?width=1320&height=684"></img>
     	<div class="subtitle">Gotta Go-Bot</div>
-        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.</div>
+        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.<br><br>Role: Programmer, Designer<br>Contributions: -<br>Engine: -</div>
         <br>
         <button class="readMore">Read More</button>
 	</div>
     <div class="game game2">
     	<img src="https://media.licdn.com/dms/image/D5622AQH_CXs-h0ikJw/feedshare-shrink_800/0/1686932235501?e=1691020800&v=beta&t=x3WJPq6F201c-VbxWLSwMpQg8kX3ia6gtJsZnCwUWJI"></img>
     	<div class="subtitle">Game2</div>
-        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.</div>
+        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.<br><br>Role: -<br>Contributions: -<br>Engine: -
+        </div>
         <br>
         <button class="readMore">Read More</button>
 	</div>
     <div class="game game3">
     	<div class="subtitle">Game3</div>
-        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.</div>
+        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.<br><br>Role: -<br>Contributions: -<br>Engine: -</div>
         <br>
         <button class="readMore">Read More</button>
 	</div>
 </section>
 <section class="contact" id="contact">
-	<div class="title accentTime">Contact</div>
+	<div class="title"><span class="accentTime">Interested?</span><br>Contact Me</div>
     <div class="contactForm">eee</div>
     
 </section>
@@ -354,18 +404,18 @@ $(document).ready(function() {
 
   function updateBackground() {
     var imageUrl = "linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.5)), url('" + links[currentLink] + "')";
-    $(".name").css({
-      background: imageUrl,
-      "background-size": "cover",
-      "background-repeat": "no-repeat",
-      "background-attachment": "fixed",
-      "background-position": "center top"
-    });
-  }
+    	$(".name").css( {
+    		background: imageUrl,
+      		"background-size": "cover",
+      		"background-repeat": "no-repeat",
+      		"background-attachment": "fixed",
+      		"background-position": "center top"
+    	});
+	}
 });
 
 $(document).ready(function() {
-    $(window).scroll(function() {
+	$(window).scroll(function() {
     	var scrollPos = $(document).scrollTop();
 
     	if (scrollPos > 570) {
@@ -380,7 +430,7 @@ $(document).ready(function() {
       		});
       		$(".nav li a").css("color", "var(--dominant)");
             $(".profilePic").css("z-index", "200");
-      		$(".homelink").hide();
+      		$(".homelink").fadeOut();
     	}
         
         if (scrollPos > 570) {
@@ -393,9 +443,6 @@ $(document).ready(function() {
     	$(this).addClass("active");
   	});
 });
-
-
 </script>
-
 </body>
 </html>
