@@ -5,12 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<title>Jack McEvoy | Game Developer</title>
 <style>    
 	:root {
     	--dominant: #E1E1E1; /*60%, Dominant*/
         --accent: #AB0101; /*10%, Accent*/
-        --complementary: #191517; /*30%, Complementary*/
+        --complementary: #191818; /*30%, Complementary*/
     }
     
     body {
@@ -29,7 +30,7 @@
     	height: 70vh;
         background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://robogadgetgogogobot.files.wordpress.com/2023/04/screenshot00018.png?w=1408&h=&zoom=2");
         
-        filter: grayscale(0.8);
+        filter: grayscale(0.7);
         background-size: cover;
         background-repeat: no-repeat;
   		background-attachment: fixed;
@@ -151,8 +152,9 @@
     }
     
     .games {
-    	/*background-color: var(--dominant);
-        box-shadow: 0px 0px 30px 30px var(--dominant);
+    	background-color: var(--complementary);
+        color: var(--dominant);
+        /*box-shadow: 0px 0px 30px 30px var(--dominant);
         position: relative;*/
     }
     
@@ -227,6 +229,60 @@ Suspendisse id libero id risus vulputate dignissim. Maecenas mauris metus, ferme
 
 </section>
 <div><button>Contact</button></div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var links = []; // Array to store the image links
+  var currentLink = 0; // Index of the current link
 
+  // Retrieve the links from the JSON file
+  $.getJSON("https://skookuri.github.io/jackportfolio/carouselpics.json", function(data) {
+    links = data.PICS;
+
+    // Set the initial background image
+    $(".name").css("background", "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('" + links[currentLink] + "')");
+    $(".name").css("background-size", "cover");
+    $(".name").css("background-repeat", "no-repeat");
+    $(".name").css("background-attachment", "fixed");
+    $(".name").css("background-position", "center top");
+    $(".name").css("animation", "pan-image 15s linear infinite");
+  });
+
+  // Left arrow click event
+  $(".leftArrow").click(function() {
+    // Update the current link index
+    if (currentLink === 0) {
+      currentLink = links.length - 1; // Wrap around to the last link
+    } else {
+      currentLink--;
+    }
+
+    // Change the background image
+    $(".name").css("background", "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('" + links[currentLink] + "')");
+    $(".name").css("background-size", "cover");
+    $(".name").css("background-repeat", "no-repeat");
+    $(".name").css("background-attachment", "fixed");
+    $(".name").css("background-position", "center top");
+    $(".name").css("animation", "pan-image 15s linear infinite");
+  });
+
+  // Right arrow click event
+  $(".rightArrow").click(function() {
+    // Update the current link index
+    if (currentLink === links.length - 1) {
+      currentLink = 0; // Wrap around to the first link
+    } else {
+      currentLink++;
+    }
+
+    // Change the background image
+    $(".name").css("background", "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('" + links[currentLink] + "')");
+    $(".name").css("background-size", "cover");
+    $(".name").css("background-repeat", "no-repeat");
+    $(".name").css("background-attachment", "fixed");
+    $(".name").css("background-position", "center top");
+    $(".name").css("animation", "pan-image 15s linear infinite");
+  });
+});
+</script>
 </body>
 </html>
