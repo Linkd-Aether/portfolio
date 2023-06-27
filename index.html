@@ -10,7 +10,7 @@
 <style>    
 	:root {
     	--dominant: #E1E1E1; /*60%, Dominant*/
-        --accent: #AB0101; /*10%, Accent*/
+        --accent: #d92323; /*10%, Accent*/
         --complementary: #191818; /*30%, Complementary*/
     }
     
@@ -35,9 +35,9 @@
     	justify-content: center; /* Vertically center the content */
     	align-items: center; /* Horizontally center the content */
     	height: 70vh;
-        background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://robogadgetgogogobot.files.wordpress.com/2023/04/screenshot00018.png?w=1408&h=&zoom=2");
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://robogadgetgogogobot.files.wordpress.com/2023/04/screenshot00018.png?w=1408&h=&zoom=2");
         
-        filter: grayscale(0.7);
+        
         background-size: cover;
         background-repeat: no-repeat;
   		background-attachment: fixed;
@@ -108,7 +108,6 @@
     .homelink {
     	display: none;
         left: 0px;
-        position: absolute;
     }
     
     section {
@@ -147,16 +146,16 @@
   		position: absolute;
   		left: calc(50% - 210px); /* Position the image in the center horizontally */
   		top: 65.5vh;
-  		/*top: 500px;*/
-        filter: grayscale(0.6);
+  		/*top: 500px;
+        filter: grayscale(0.6);*/
         cursor: pointer;
         z-index: 200;
 	}
     
-    .profilePic:hover {
+    /*.profilePic:hover {
     	filter: none;
         transition: 0.3s;
-    }
+    }*/
     
     .games {
     	background-color: var(--complementary);
@@ -164,7 +163,6 @@
         padding-top: 70px;
         padding-bottom: 70px;
         height: fit-content;
-        
     }
     
     .cslang img {
@@ -202,7 +200,7 @@
     
     .sqirl {
     	position: absolute;
-        top: 830px;
+        top: 112vh;
         left: 30px;
         width: 152px;
         height: 152px;
@@ -214,7 +212,12 @@
     }
     
     .game {
-    	padding: 20px;
+    	padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-left: 5px solid var(--accent);
+        text-align: center;
     }
     
     .contact {
@@ -227,31 +230,53 @@
         background-color: var(--dominant);
     }
     
+    /*img:not(.sqirl) {
+    	filter: grayscale(0.7);
+    }*/
+    
+    .accentTime {
+    	color: var(--accent);
+    }
+    
     .contactForm {
 
     }
+    
+    .game img {
+    	max-width: 534px;
+        max-height: 400px;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        float: left;
+        padding: 20px;
+    }
+    
+    .games .game:nth-child(odd) img {
+  		float: right;
+	}
 </style>
 </head>
 <body>
 <div class="nav">
 	<ul>
     	<li class="homelink"><a href="#">Jack McEvoy</a></li>
+        <li><a href="#games">Games</a></li>
     	<li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>  
 </div>
 <section class="name">
 	<div class="title">Jack McEvoy</div>
-	<div class="subtitle">Game Developer</div>
+	<div class="subtitle"><span class="accentTime">Game</span> Developer</div>
     <div class="rightArrow"><i class="fa fa-chevron-right"></i></div>
     <div class="leftArrow"><i class="fa fa-chevron-left"></i></div>
 </section>
 <section class="about">
 	<div class="aboutContent">
     	<div class="title">About</div>
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. </div>
+        <div>Lorem <span class="accentTime">ipsum</span> dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. <span class="accentTime">Fusce tempus</span> erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. </div>
         <img class="profilePic" src="https://media.licdn.com/dms/image/C4E03AQGfzwZh12-Dag/profile-displayphoto-shrink_800_800/0/1601317151703?e=2147483647&v=beta&t=1uPWiUSiQ3Jr3_EnqOZ9nkjuqTqehlQ7aN5HNhyd5BA"></img>
-        <img class="profilePic two" src="https://media.licdn.com/dms/image/C4E03AQGfzwZh12-Dag/profile-displayphoto-shrink_800_800/0/1601317151703?e=2147483647&v=beta&t=1uPWiUSiQ3Jr3_EnqOZ9nkjuqTqehlQ7aN5HNhyd5BA"></img>
     </div>
     <div class="cslang">
         	<!--<ul>
@@ -261,14 +286,16 @@
             </ul>-->
     </div>
 </section>
-<section class="games">
+<section class="games" id="games">
 	<div class="title">Games</div>
     <img class="sqirl" src="https://media.discordapp.net/attachments/857029806204780545/1123020889089376346/sqirl.png?width=1333&height=1170"></img>
     <div class="game gottagobot">
+    	<img src="https://robogadgetgogogobot.files.wordpress.com/2023/04/cinematic.gif?w=600&zoom=2"></img>
     	<div class="subtitle">Gotta Go-Bot</div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
 	</div>
     <div class="game game2">
+    	<img src="https://media.licdn.com/dms/image/D5622AQH_CXs-h0ikJw/feedshare-shrink_800/0/1686932235501?e=1691020800&v=beta&t=x3WJPq6F201c-VbxWLSwMpQg8kX3ia6gtJsZnCwUWJI"></img>
     	<div class="subtitle">Game2</div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
 	</div>
@@ -278,7 +305,7 @@
 	</div>
 </section>
 <section class="contact" id="contact">
-	<div class="title">Contact</div>
+	<div class="title accentTime">Contact</div>
     <div class="contactForm">eee</div>
     
 </section>
@@ -303,7 +330,7 @@ $(document).ready(function() {
   });
 
   function updateBackground() {
-    var imageUrl = "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('" + links[currentLink] + "')";
+    var imageUrl = "linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.5)), url('" + links[currentLink] + "')";
     $(".name").css({
       background: imageUrl,
       "background-size": "cover",
@@ -318,16 +345,11 @@ $(document).ready(function() {
     $(window).scroll(function() {
     	var scrollPos = $(document).scrollTop();
 
-    	if ((scrollPos > 660) && (scrollPos < 1100)) {
+    	if (scrollPos > 570) {
       		$(".nav").css("background-color", "var(--complementary)");
       		$(".nav li a").css("color", "var(--dominant)");
       		$(".homelink").fadeIn();
-    	} else if ((scrollPos >= 1100) && (scrollPos < 2000)) {
-      		$(".nav").css("background-color", "var(--dominant)");
-      		$(".nav li a").css("color", "var(--complementary)");
-    	} else if (scrollPos >= 2000) {
-        	$(".nav").css("background-color", "var(--complementary)");
-      		$(".nav li a").css("color", "var(--dominant)");
+            //$(".homelink").css("color", "var(--accent)");
         } else {
       		$(".nav").css({
         		"background-color": "transparent",
@@ -338,7 +360,7 @@ $(document).ready(function() {
       		$(".homelink").hide();
     	}
         
-        if (scrollPos > 700) {
+        if (scrollPos > 570) {
         	$(".profilePic").css("z-index", "initial");
         }
   	});
@@ -348,9 +370,6 @@ $(document).ready(function() {
     	$(this).addClass("active");
   	});
 });
-
-
 </script>
-
 </body>
 </html>
