@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Jack McEvoy | Game Developer</title>
+<style>    
+	:root {
+    	--dominant: #E1E1E1; /*60%, Dominant*/
+        --accent: #AB0101; /*10%, Accent*/
+        --complementary: #191517; /*30%, Complementary*/
+    }
+    
+    body {
+    	color: var(--complementary);
+    	background-color: var(--dominant);
+        font-family: "Oswald", sans-serif;
+        margin: 0;
+    }
+    
+    .name {
+    	color: var(--dominant);
+        display: flex;
+    	flex-direction: column; /* Stack elements vertically */
+    	justify-content: center; /* Vertically center the content */
+    	align-items: center; /* Horizontally center the content */
+    	height: 70vh;
+        background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://robogadgetgogogobot.files.wordpress.com/2023/04/screenshot00018.png?w=1408&h=&zoom=2");
+        
+        filter: grayscale(0.8);
+        background-size: cover;
+        background-repeat: no-repeat;
+  		background-attachment: fixed;
+        background-position: center top;
+        animation: pan-image 15s linear infinite;
+        
+    }
+    
+    .title {
+    	font-size: 50px;
+    }
+    
+    .subtitle {
+    	font-size: 30px;
+    }
+    
+    button {
+    	background-color: var(--complementary);
+        color: var(--dominant);
+        /*border-color: #f2e852;*/
+        cursor: pointer;
+    }
+    
+    button:hover {
+    	background-color: var(--accent);
+        transition: 0.3s;
+        color: #fff;
+    }
+    
+    ul {
+    	list-style-type: none;
+  		margin: 0;
+  		padding: 0;
+    }
+    
+    li {
+      	display: inline-block;
+    }
+    
+    .nav li a {
+		display: inline-block;
+      	text-align: center;
+      	text-decoration: none;
+      	font-size: 20px;
+      	color: var(--dominant);
+      	padding: 10px;
+      	cursor: pointer;
+    }
+    
+    .nav li a:hover {
+      	background-color: var(--accent);
+      	transition: 0.3s;
+      	cursor: pointer;
+    }
+    
+    .nav {
+        position: fixed;
+        width: 100%;
+    	background-color: var(--complementary);
+        top: 0;
+        overflow: hidden;
+        text-align: center;
+        z-index: 100;
+    }
+    
+    .homelink {
+    	display: none;
+        left: 0px;
+        position: absolute;
+    }
+    
+    section {
+    	width: 100%;
+        box-sizing: border-box;
+        height: 100vh;
+        padding: 10px;
+    }
+    
+    .sqirl {
+    	position: absolute;
+        width: 20%;
+        height: 20%;
+    }
+    
+    .about {
+        height: fit-content;
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Vertically center the content */
+    	align-items: center; /* Horizontally center the content */
+        
+        background-color: var(--complementary);
+    }
+    
+    .aboutContent {
+    	border: 1px solid var(--complementary);
+        border-radius: 25px;
+        width: 50%;
+        height: fit-content;
+        padding: 30px;
+        background-color: var(--dominant);
+    }
+    
+    .profilePic {
+  		height: 130px;
+  		width: 130px;
+  		border-radius: 50%;
+  		border: 6px solid var(--dominant);
+  		position: absolute;
+  		left: calc(50% - 210px); /* Position the image in the center horizontally */
+  		top: 500px;
+        filter: grayscale(0.6);
+        cursor: pointer;
+	}
+    
+    .profilePic:hover {
+    	filter: none;
+        transition: 0.3s;
+    }
+    
+    .games {
+    	/*background-color: var(--dominant);
+        box-shadow: 0px 0px 30px 30px var(--dominant);
+        position: relative;*/
+    }
+    
+    .cslang img {
+    	width: 66px;
+        height: 66px;
+        position: absolute;
+        background-color: var(--dominant);
+        border-radius: 25%;
+        float: right;
+    }
+    
+    .leftArrow,.rightArrow {
+    	position: absolute;
+    	top: 50%;
+    	transform: translateY(-50%);
+    	font-size: 30px;
+    	color: var(--dominant);
+    	cursor: pointer;
+    	padding: 10px;
+        opacity: 0.6;
+	}
+
+	.leftArrow {
+    	left: 10px;
+	}
+
+	.rightArrow {
+    	right: 10px;
+	}
+    
+    .leftArrow:hover, .rightArrow:hover {
+    	opacity: 1;
+        transition: 0.3s;
+    }
+</style>
+</head>
+<body>
+<div class="nav">
+	<ul>
+    	<li class="homelink"><a href="/">Jack McEvoy</a></li>
+    	<li><a href="/resume">Resume</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>  
+</div>
+<section class="name">
+	<div class="title">Jack McEvoy</div>
+	<div class="subtitle">Game Developer</div>
+    <div class="rightArrow"><i class="fa fa-chevron-right"></i></div>
+    <div class="leftArrow"><i class="fa fa-chevron-left"></i></div>
+</section>
+<section class="about">
+	<div class="aboutContent">
+    	<div class="title">About</div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. </div>
+        <img class="profilePic" src="https://media.licdn.com/dms/image/C4E03AQGfzwZh12-Dag/profile-displayphoto-shrink_800_800/0/1601317151703?e=2147483647&v=beta&t=1uPWiUSiQ3Jr3_EnqOZ9nkjuqTqehlQ7aN5HNhyd5BA"></img>
+    </div>
+    <div class="cslang">
+        	<!--<ul>
+            	<li><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C# logo"></img></li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="C++ logo"></img></li>
+                
+            </ul>-->
+    </div>
+</section>
+<section class="games">
+	<div class="title">Games</div>
+    <img class="sqirl" src="https://media.discordapp.net/attachments/857029806204780545/1123020889089376346/sqirl.png?width=1333&height=1170"></img>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
+<br><br>
+Suspendisse id libero id risus vulputate dignissim. Maecenas mauris metus, fermentum sit amet sem at, lacinia semper nunc. Proin id lectus id erat vestibulum luctus non vel purus. Cras lobortis eros velit, quis fringilla ante fermentum nec. Nulla vulputate metus non suscipit vulputate. Etiam ullamcorper pharetra egestas. Integer sodales arcu diam, in pretium nibh rutrum a. Integer pellentesque nisi eget ipsum iaculis, quis porttitor est commodo. Nunc mollis malesuada ipsum id lacinia. Fusce sed neque pharetra, aliquam massa eget, iaculis justo. Donec mollis magna id gravida tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum condimentum felis sed facilisis. Pellentesque lobortis iaculis elementum. Pellentesque bibendum mollis libero ut condimentum. Pellentesque in orci quis erat fringilla placerat.</div>
+
+</section>
+<div><button>Contact</button></div>
+
+</body>
+</html>
