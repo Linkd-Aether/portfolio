@@ -35,16 +35,14 @@
         background-repeat: no-repeat;
   		background-attachment: fixed;
         background-position: center top;
-        animation: pan-image 15s linear infinite;
-        
     }
     
     .title {
-    	font-size: 50px;
+    	font-size: 60px;
     }
     
     .subtitle {
-    	font-size: 30px;
+    	font-size: 35px;
     }
     
     button {
@@ -108,25 +106,21 @@
         height: 100vh;
         padding: 10px;
     }
-    
-    .sqirl {
-    	position: absolute;
-        width: 20%;
-        height: 20%;
-    }
-    
+
     .about {
         height: fit-content;
         text-align: center;
         display: flex;
         justify-content: center; /* Vertically center the content */
     	align-items: center; /* Horizontally center the content */
-        
         background-color: var(--complementary);
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
     
     .aboutContent {
     	border: 1px solid var(--complementary);
+        
         border-radius: 25px;
         width: 50%;
         height: fit-content;
@@ -154,6 +148,7 @@
     .games {
     	background-color: var(--complementary);
         color: var(--dominant);
+        padding-top: 70px;
         /*box-shadow: 0px 0px 30px 30px var(--dominant);
         position: relative;*/
     }
@@ -190,14 +185,31 @@
     	opacity: 1;
         transition: 0.3s;
     }
+    
+    .sqirl {
+    	position: absolute;
+        top: 830px;
+        left: 30px;
+        width: 152px;
+        height: 152px;
+        z-index: 99;
+    }
+    
+    .games .title {
+    	z-index: 101;
+    }
+    
+    .game {
+    	padding: 20px;
+    }
 </style>
 </head>
 <body>
 <div class="nav">
 	<ul>
-    	<li class="homelink"><a href="/">Jack McEvoy</a></li>
-    	<li><a href="/resume">Resume</a></li>
-        <li><a href="/contact">Contact</a></li>
+    	<li class="homelink"><a href="#">Jack McEvoy</a></li>
+    	<li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>  
 </div>
 <section class="name">
@@ -223,66 +235,73 @@
 <section class="games">
 	<div class="title">Games</div>
     <img class="sqirl" src="https://media.discordapp.net/attachments/857029806204780545/1123020889089376346/sqirl.png?width=1333&height=1170"></img>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
-<br><br>
-Suspendisse id libero id risus vulputate dignissim. Maecenas mauris metus, fermentum sit amet sem at, lacinia semper nunc. Proin id lectus id erat vestibulum luctus non vel purus. Cras lobortis eros velit, quis fringilla ante fermentum nec. Nulla vulputate metus non suscipit vulputate. Etiam ullamcorper pharetra egestas. Integer sodales arcu diam, in pretium nibh rutrum a. Integer pellentesque nisi eget ipsum iaculis, quis porttitor est commodo. Nunc mollis malesuada ipsum id lacinia. Fusce sed neque pharetra, aliquam massa eget, iaculis justo. Donec mollis magna id gravida tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum condimentum felis sed facilisis. Pellentesque lobortis iaculis elementum. Pellentesque bibendum mollis libero ut condimentum. Pellentesque in orci quis erat fringilla placerat.</div>
+    <div class="game gottagobot">
+    	<div class="subtitle">Gotta Go-Bot</div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
+	</div>
+    <div class="game game2">
+    	<div class="subtitle">Game2</div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
+	</div>
+    <div class="game game3">
+    	<div class="subtitle">Game3</div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
+	</div>
 
 </section>
-<div><button>Contact</button></div>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  var links = []; // Array to store the image links
-  var currentLink = 0; // Index of the current link
+$(document).ready(function() {
+  var links = [];
+  var currentLink = 0;
 
-  // Retrieve the links from the JSON file
   $.getJSON("https://skookuri.github.io/jackportfolio/carouselpics.json", function(data) {
     links = data.PICS;
-
-    // Set the initial background image
-    $(".name").css("background", "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('" + links[currentLink] + "')");
-    $(".name").css("background-size", "cover");
-    $(".name").css("background-repeat", "no-repeat");
-    $(".name").css("background-attachment", "fixed");
-    $(".name").css("background-position", "center top");
-    $(".name").css("animation", "pan-image 15s linear infinite");
+    updateBackground();
   });
 
-  // Left arrow click event
   $(".leftArrow").click(function() {
-    // Update the current link index
-    if (currentLink === 0) {
-      currentLink = links.length - 1; // Wrap around to the last link
-    } else {
-      currentLink--;
-    }
-
-    // Change the background image
-    $(".name").css("background", "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('" + links[currentLink] + "')");
-    $(".name").css("background-size", "cover");
-    $(".name").css("background-repeat", "no-repeat");
-    $(".name").css("background-attachment", "fixed");
-    $(".name").css("background-position", "center top");
-    $(".name").css("animation", "pan-image 15s linear infinite");
+    currentLink = (currentLink === 0) ? links.length - 1 : currentLink - 1;
+    updateBackground();
   });
 
-  // Right arrow click event
   $(".rightArrow").click(function() {
-    // Update the current link index
-    if (currentLink === links.length - 1) {
-      currentLink = 0; // Wrap around to the first link
-    } else {
-      currentLink++;
-    }
-
-    // Change the background image
-    $(".name").css("background", "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('" + links[currentLink] + "')");
-    $(".name").css("background-size", "cover");
-    $(".name").css("background-repeat", "no-repeat");
-    $(".name").css("background-attachment", "fixed");
-    $(".name").css("background-position", "center top");
-    $(".name").css("animation", "pan-image 15s linear infinite");
+    currentLink = (currentLink === links.length - 1) ? 0 : currentLink + 1;
+    updateBackground();
   });
+
+  function updateBackground() {
+    var imageUrl = "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('" + links[currentLink] + "')";
+    $(".name").css({
+      background: imageUrl,
+      "background-size": "cover",
+      "background-repeat": "no-repeat",
+      "background-attachment": "fixed",
+      "background-position": "center top"
+    });
+  }
 });
+
+$(document).ready(function() {
+  // Define the target element
+  var titleElement = document.querySelector('.title');
+  var homeLinkElement = document.querySelector('.homelink');
+
+  // Create a new Intersection Observer
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      // If the title element is out of the viewport, show the home link
+      if (!entry.isIntersecting) {
+        homeLinkElement.style.display = 'block';
+      } else {
+        homeLinkElement.style.display = 'none';
+      }
+    });
+  });
+
+  // Observe the title element
+  observer.observe(titleElement);
+});
+
 </script>
 </body>
 </html>
