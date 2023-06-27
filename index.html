@@ -14,11 +14,18 @@
         --complementary: #191818; /*30%, Complementary*/
     }
     
+    html, body {
+    	width: 100%;
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+    	 
+	}
     body {
     	color: var(--complementary);
-    	background-color: var(--dominant);
+    	background-color: var(--complementary);
         font-family: "Oswald", sans-serif;
-        margin: 0;
+        font-size: 25px;
     }
     
     .name {
@@ -68,12 +75,16 @@
       	display: inline-block;
     }
     
+    a {
+    	color: var(--dominant) 
+    }
+    
     .nav li a {
 		display: inline-block;
       	text-align: center;
       	text-decoration: none;
-      	font-size: 20px;
-      	color: var(--dominant);
+      	font-size: 30px;
+
       	padding: 10px;
       	cursor: pointer;
     }
@@ -87,11 +98,11 @@
     .nav {
         position: fixed;
         width: 100%;
-    	background-color: var(--complementary);
         top: 0;
         overflow: hidden;
         text-align: center;
         z-index: 100;
+        
     }
     
     .homelink {
@@ -139,6 +150,7 @@
   		/*top: 500px;*/
         filter: grayscale(0.6);
         cursor: pointer;
+        z-index: 200;
 	}
     
     .profilePic:hover {
@@ -150,9 +162,9 @@
     	background-color: var(--complementary);
         color: var(--dominant);
         padding-top: 70px;
+        padding-bottom: 70px;
         height: fit-content;
-        /*box-shadow: 0px 0px 30px 30px var(--dominant);
-        position: relative;*/
+        
     }
     
     .cslang img {
@@ -204,6 +216,20 @@
     .game {
     	padding: 20px;
     }
+    
+    .contact {
+    	display: flex;
+    	flex-direction: column; /* Stack elements vertically */
+    	align-items: center; /* Horizontally center the content */
+        box-shadow: 0px 0px 30px 50px var(--dominant);
+        position: relative;
+        padding: 60px;
+        background-color: var(--dominant);
+    }
+    
+    .contactForm {
+
+    }
 </style>
 </head>
 <body>
@@ -250,7 +276,11 @@
     	<div class="subtitle">Game3</div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
 	</div>
-
+</section>
+<section class="contact" id="contact">
+	<div class="title">Contact</div>
+    <div class="contactForm">eee</div>
+    
 </section>
 <script>
 $(document).ready(function() {
@@ -285,26 +315,42 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  // Define the target element
-  var titleElement = document.querySelector('.title');
-  var homeLinkElement = document.querySelector('.homelink');
+    $(window).scroll(function() {
+    	var scrollPos = $(document).scrollTop();
 
-  // Create a new Intersection Observer
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      // If the title element is out of the viewport, show the home link
-      if (!entry.isIntersecting) {
-        homeLinkElement.style.display = 'block';
-      } else {
-        homeLinkElement.style.display = 'none';
-      }
-    });
-  });
+    	if ((scrollPos > 660) && (scrollPos < 1100)) {
+      		$(".nav").css("background-color", "var(--complementary)");
+      		$(".nav li a").css("color", "var(--dominant)");
+      		$(".homelink").fadeIn();
+    	} else if ((scrollPos >= 1100) && (scrollPos < 2000)) {
+      		$(".nav").css("background-color", "var(--dominant)");
+      		$(".nav li a").css("color", "var(--complementary)");
+    	} else if (scrollPos >= 2000) {
+        	$(".nav").css("background-color", "var(--complementary)");
+      		$(".nav li a").css("color", "var(--dominant)");
+        } else {
+      		$(".nav").css({
+        		"background-color": "transparent",
+        		"border-bottom": "none"
+      		});
+      		$(".nav li a").css("color", "var(--dominant)");
+            $(".profilePic").css("z-index", "200");
+      		$(".homelink").hide();
+    	}
+        
+        if (scrollPos > 700) {
+        	$(".profilePic").css("z-index", "initial");
+        }
+  	});
 
-  // Observe the title element
-  observer.observe(titleElement);
+  	$(".nav li a").click(function() {
+    	$(".nav li a").removeClass("active");
+    	$(this).addClass("active");
+  	});
 });
 
+
 </script>
+
 </body>
 </html>
