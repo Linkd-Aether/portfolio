@@ -148,7 +148,6 @@
     
     .aboutContent {
     	border: 1px solid var(--complementary);
-        
         border-radius: 25px;
         width: 50%;
         height: fit-content;
@@ -184,12 +183,19 @@
     }
     
     .cslang img {
-    	width: 66px;
-        height: 66px;
+    	width: 77px;
+        height: 77px;
         position: absolute;
         background-color: var(--dominant);
         border-radius: 25%;
         float: right;
+        cursor: pointer;
+        margin: 35px;
+    }
+    
+    .cslang img:hover {
+    	scale: 1.5;
+        transition: 0.3s;
     }
     
     .leftArrow,.rightArrow {
@@ -348,11 +354,11 @@
         <img class="profilePic" src="https://media.licdn.com/dms/image/C4E03AQGfzwZh12-Dag/profile-displayphoto-shrink_800_800/0/1601317151703?e=2147483647&v=beta&t=1uPWiUSiQ3Jr3_EnqOZ9nkjuqTqehlQ7aN5HNhyd5BA"></img>
     </div>
     <div class="cslang">
-        	<!--<ul>
+        	<ul>
             	<li><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C# logo"></img></li>
-                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="C++ logo"></img></li>
+                <!--<li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="C++ logo"></img></li>-->
                 
-            </ul>-->
+            </ul>
     </div>
 </section>
 <section class="games" id="games">
