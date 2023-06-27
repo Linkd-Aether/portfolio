@@ -51,20 +51,7 @@
     .subtitle {
     	font-size: 35px;
     }
-    
-    button {
-    	background-color: var(--complementary);
-        color: var(--dominant);
-        /*border-color: #f2e852;*/
-        cursor: pointer;
-    }
-    
-    button:hover {
-    	background-color: var(--accent);
-        transition: 0.3s;
-        color: #fff;
-    }
-    
+ 
     ul {
     	list-style-type: none;
   		margin: 0;
@@ -250,11 +237,41 @@
         opacity: 0.4;
         float: left;
         padding: 20px;
+        border-radius: 50px;
     }
     
     .games .game:nth-child(odd) img {
   		float: right;
 	}
+    
+    .bodyText {
+    	font-family: "Arial", sans-serif;
+    }
+    
+    .game .bodyText {
+    	font-size: 20px;
+    }
+    
+    .readMore {
+    	color: var(--dominant);
+        background: transparent;
+        font-family: "Oswald", sans-serif;
+        border: 4px solid var(--accent);
+        font-size: 20px;
+        border-radius: 50px;
+        padding: 10px;
+        
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    
+    .readMore:hover {
+    	background-color: var(--accent);
+        transition: 0.3s;
+        
+    }
 </style>
 </head>
 <body>
@@ -275,7 +292,7 @@
 <section class="about">
 	<div class="aboutContent">
     	<div class="title">About</div>
-        <div>Lorem <span class="accentTime">ipsum</span> dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. <span class="accentTime">Fusce tempus</span> erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. </div>
+        <div class="bodyText">Lorem <span class="accentTime">ipsum</span> dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. <span class="accentTime">Fusce tempus</span> erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh.</div>
         <img class="profilePic" src="https://media.licdn.com/dms/image/C4E03AQGfzwZh12-Dag/profile-displayphoto-shrink_800_800/0/1601317151703?e=2147483647&v=beta&t=1uPWiUSiQ3Jr3_EnqOZ9nkjuqTqehlQ7aN5HNhyd5BA"></img>
     </div>
     <div class="cslang">
@@ -290,18 +307,24 @@
 	<div class="title">Games</div>
     <img class="sqirl" src="https://media.discordapp.net/attachments/857029806204780545/1123020889089376346/sqirl.png?width=1333&height=1170"></img>
     <div class="game gottagobot">
-    	<img src="https://robogadgetgogogobot.files.wordpress.com/2023/04/cinematic.gif?w=600&zoom=2"></img>
+    	<img src="https://media.discordapp.net/attachments/784390283701256192/1123196020071862282/cinematic.png?width=1320&height=684"></img>
     	<div class="subtitle">Gotta Go-Bot</div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
+        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.</div>
+        <br>
+        <button class="readMore">Read More</button>
 	</div>
     <div class="game game2">
     	<img src="https://media.licdn.com/dms/image/D5622AQH_CXs-h0ikJw/feedshare-shrink_800/0/1686932235501?e=1691020800&v=beta&t=x3WJPq6F201c-VbxWLSwMpQg8kX3ia6gtJsZnCwUWJI"></img>
     	<div class="subtitle">Game2</div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
+        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.</div>
+        <br>
+        <button class="readMore">Read More</button>
 	</div>
     <div class="game game3">
     	<div class="subtitle">Game3</div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.
+        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.</div>
+        <br>
+        <button class="readMore">Read More</button>
 	</div>
 </section>
 <section class="contact" id="contact">
@@ -370,6 +393,9 @@ $(document).ready(function() {
     	$(this).addClass("active");
   	});
 });
+
+
 </script>
+
 </body>
 </html>
