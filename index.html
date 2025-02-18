@@ -1,464 +1,515 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<title>Jack McEvoy | Game Developer</title>
-<style>    
-	:root {
-    	--dominant: #E1E1E1; /*60%, Dominant*/
-        --accent: #d92323; /*10%, Accent*/
-        --complementary: #191818; /*30%, Complementary*/
-    }
-    
-    html {
-  		scroll-behavior: smooth;
-    }
-    html, body {
-    	width: 100%;
-    	height: 100%;
-    	margin: 0;
-    	padding: 0;
-    	 
-	}
-    
-    body {
-    	color: var(--complementary);
-    	background-color: var(--complementary);
-        font-family: "Oswald", sans-serif;
-        font-size: 25px;
-    }
-    
-    .name {
-    	color: var(--dominant);
-        display: flex;
-    	flex-direction: column; /* Stack elements vertically */
-    	justify-content: center; /* Vertically center the content */
-    	align-items: center; /* Horizontally center the content */
-    	height: 70vh;
-        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://robogadgetgogogobot.files.wordpress.com/2023/04/screenshot00006-2-2708197601-e1681709316238.png?w=1136&h=&zoom=2");
-        
-        
-        background-size: cover;
-        background-repeat: no-repeat;
-  		background-attachment: fixed;
-        background-position: center top;
-    }
-    
-    .title {
-    	font-size: 60px;
-    }
-    
-    .subtitle {
-    	font-size: 35px;
-    }
- 
-    ul {
-    	list-style-type: none;
-  		margin: 0;
-  		padding: 0;
-    }
-    
-    li {
-      	display: inline-block;
-    }
-    
-    a {
-    	color: var(--dominant) 
-    }
-    
-    .nav ul li a {
-		display: inline-block;
-      	text-align: center;
-      	text-decoration: none;
-      	font-size: 30px;
+    <title>Jade McEvoy | Game Developer</title>
+    <style>
+        :root {
+            --dominant: #E1E1E1;
+            /*60%, Dominant*/
+            --accent: #d92323;
+            /*10%, Accent*/
+            --complementary: #191818;
+            /*30%, Complementary*/
+        }
 
-      	padding: 10px;
-      	cursor: pointer;
-    }
-    
-    .nav ul li a:hover {
-      	transition: 0.3s;
-      	cursor: pointer;
-        text-shadow: rgba(225,225,225,1) 0px 0px 20px;
-    }
-    
-    .nav {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        overflow: hidden;
-        text-align: center;
-        z-index: 100;
-        
-    }
-    
-    .nav .icon {
-      display: none;
-    }
-    
-    
-    @media screen and (max-width: 491px) {
-      .nav ul li a:not(.icon) {display: none;}
-      .nav .icon {
-        display: block;
-      }
-    }
-    
-    @media screen and (max-width: 491px) {
-      .nav.responsive {position: fixed;}
-      .nav.responsive ul li a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .nav.responsive ul li a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-    }
-    
-    .homelink {
-    	display: none;
-        left: 0px;
-    }
-    
-    section {
-    	width: 100%;
-        box-sizing: border-box;
-        height: 100vh;
-        padding: 10px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .about {
-        height: fit-content;
-        text-align: center;
-        display: flex;
-        justify-content: center; /* Vertically center the content */
-    	align-items: center; /* Horizontally center the content */
-        background-color: var(--complementary);
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    
-    .aboutContent {
-    	border: 1px solid var(--complementary);
-        border-radius: 25px;
-        width: 50%;
-        height: fit-content;
-        padding: 30px;
-        background-color: var(--dominant);
-    }
-    
-    .profilePic {
-  		height: 130px;
-  		width: 130px;
-  		border-radius: 50%;
-  		border: 6px solid var(--dominant);
-  		position: absolute;
-  		left: calc(50% - 210px); /* Position the image in the center horizontally */
-  		top: 65.5vh;
-  		/*top: 500px;
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            color: var(--complementary);
+            background-color: var(--complementary);
+            font-family: "Oswald", sans-serif;
+            font-size: 25px;
+        }
+
+        .name {
+            color: var(--dominant);
+            display: flex;
+            flex-direction: column;
+            /* Stack elements vertically */
+            justify-content: center;
+            /* Vertically center the content */
+            align-items: center;
+            /* Horizontally center the content */
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://robogadgetgogogobot.files.wordpress.com/2023/04/screenshot00006-2-2708197601-e1681709316238.png?w=1136&h=&zoom=2");
+
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+        }
+
+        .title {
+            font-size: 60px;
+        }
+
+        .subtitle {
+            font-size: 35px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            color: var(--dominant)
+        }
+
+        .nav ul li a {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .nav ul li a:hover {
+            transition: 0.3s;
+            cursor: pointer;
+            text-shadow: rgba(225, 225, 225, 1) 0px 0px 20px;
+        }
+
+        .nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            overflow: hidden;
+            text-align: center;
+            z-index: 100;
+
+        }
+
+        .nav .icon {
+            display: none;
+        }
+
+
+        @media screen and (max-width: 491px) {
+            .nav ul li a:not(.icon) {
+                display: none;
+            }
+
+            .nav .icon {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 491px) {
+            .nav.responsive {
+                position: fixed;
+            }
+
+            .nav.responsive ul li a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .nav.responsive ul li a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        .homelink {
+            display: none;
+            left: 0px;
+        }
+
+        section {
+            width: 100%;
+            box-sizing: border-box;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        .about {
+            height: fit-content;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            /* Vertically center the content */
+            align-items: center;
+            /* Horizontally center the content */
+            background-color: var(--complementary);
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .aboutContent {
+            border: 1px solid var(--complementary);
+            border-radius: 25px;
+            width: 50%;
+            height: fit-content;
+            padding: 30px;
+            background-color: var(--dominant);
+        }
+
+        .profilePic {
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            border: 6px solid var(--dominant);
+            position: absolute;
+            left: calc(50% - 210px);
+            /* Position the image in the center horizontally */
+            top: 65.5vh;
+            /*top: 500px;
         filter: grayscale(0.6);*/
-        cursor: pointer;
-        z-index: 200;
-	}
-    
-    /*.profilePic:hover {
+            cursor: pointer;
+            z-index: 200;
+        }
+
+        /*.profilePic:hover {
     	filter: none;
         transition: 0.3s;
     }*/
-    
-    .games {
-    	background-color: var(--complementary);
-        color: var(--dominant);
-        padding-top: 70px;
-        padding-bottom: 70px;
-        height: fit-content;
-    }
-    
-    .cslang img {
-    	width: 77px;
-        height: 77px;
-        position: absolute;
-        background-color: var(--dominant);
-        border-radius: 25%;
-        float: right;
-        cursor: pointer;
-        margin: 35px;
-    }
-    
-    .cslang img:hover {
-    	scale: 1.5;
-        transition: 0.3s;
-    }
-    
-    .leftArrow,.rightArrow {
-    	position: absolute;
-    	transform: translateY(-50%);
-    	font-size: 30px;
-    	color: var(--dominant);
-    	cursor: pointer;
-    	padding: 10px;
-        opacity: 0.6;
-	}
 
-	.leftArrow {
-    	left: 10px;
-	}
+        .games {
+            background-color: var(--complementary);
+            color: var(--dominant);
+            padding-top: 70px;
+            padding-bottom: 70px;
+            height: fit-content;
+        }
 
-	.rightArrow {
-    	right: 10px;
-	}
-    
-    .leftArrow:hover, .rightArrow:hover {
-    	opacity: 1;
-        transition: 0.3s;
-    }
-    
-    .sqirl {
-    	position: absolute;
-        top: 103vh;
-        left: 30px;
-        width: 152px;
-        height: 152px;
-        z-index: 99;
-    }
-    
-    .games .title {
-    	z-index: 101;
-    }
-    
-    .game {
-    	padding-top: 50px;
-        padding-bottom: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-left: 5px solid var(--accent);
-        text-align: center;
-    }
-    
-    .contact {
-    	display: flex;
-    	flex-direction: column; /* Stack elements vertically */
-    	align-items: center; /* Horizontally center the content */
-        box-shadow: 0px 0px 30px 50px var(--dominant);
-        position: relative;
-        padding: 60px;
-        background-color: var(--dominant);
-    }
-    
-    /*img:not(.sqirl) {
+        .cslang img {
+            width: 77px;
+            height: 77px;
+            position: absolute;
+            background-color: var(--dominant);
+            border-radius: 25%;
+            float: right;
+            cursor: pointer;
+            margin: 35px;
+        }
+
+        .cslang img:hover {
+            scale: 1.5;
+            transition: 0.3s;
+        }
+
+        .leftArrow,
+        .rightArrow {
+            position: absolute;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: var(--dominant);
+            cursor: pointer;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        .leftArrow {
+            left: 10px;
+        }
+
+        .rightArrow {
+            right: 10px;
+        }
+
+        .leftArrow:hover,
+        .rightArrow:hover {
+            opacity: 1;
+            transition: 0.3s;
+        }
+
+        .sqirl {
+            position: absolute;
+            top: 103vh;
+            left: 30px;
+            width: 152px;
+            height: 152px;
+            z-index: 99;
+        }
+
+        .games .title {
+            z-index: 101;
+        }
+
+        .game {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-left: 5px solid var(--accent);
+            text-align: center;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            /* Stack elements vertically */
+            align-items: center;
+            /* Horizontally center the content */
+            box-shadow: 0px 0px 30px 50px var(--dominant);
+            position: relative;
+            padding: 60px;
+            background-color: var(--dominant);
+        }
+
+        /*img:not(.sqirl) {
     	filter: grayscale(0.7);
     }*/
-    
-    .accentTime {
-    	color: var(--accent);
-    }
-    
-    .contactForm {
 
-    }
-    
-    .game img {
-    	max-width: 534px;
-        max-height: 400px;
-        width: 100%;
-        height: 100%;
-        opacity: 0.4;
-        float: left;
-        padding: 20px;
-        border-radius: 50px;
-        cursor: pointer;
-    }
-    
-    .game img:hover {
-    	opacity: 1;
-        transition: 0.3s;
-    }
-    
-    .games .game:nth-child(odd) img {
-  		float: right;
-	}
-    
-    .bodyText {
-    	font-family: "Arial", sans-serif;
-    }
-    
-    .game .bodyText {
-    	font-size: 20px;
-    }
-    
-    .readMore {
-    	color: var(--dominant);
-        background: transparent;
-        font-family: "Oswald", sans-serif;
-        border: 4px solid var(--accent);
-        font-size: 20px;
-        border-radius: 50px;
-        padding: 10px;
-        
-    }
-    
-    button {
-        cursor: pointer;
-    }
-    
-    .readMore:hover {
-    	
-        transition: 0.3s;
-        text-shadow: rgba(225,225,225,1) 0px 0px 20px;
-        
-    }
-</style>
-</head>
-<body>
-<div class="nav" id="nav">
-	<ul>
-    	<li class="homelink"><a href="#">Jack McEvoy</a></li>
-        <li><a href="#games">Games</a></li>
-    	<li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <a href="javascript:void(0);" class="icon" onclick="hamburgerTime()">
-      		<i class="fa fa-bars"></i>
-    	</a>
-    </ul>  
-</div>
-
-<script>
-function hamburgerTime() {
-	var x = document.getElementById("nav");
-		if (x.className === "nav") {
-			x.className += " responsive";
-      	} else {
-        	x.className = "nav";
-      	}
-}
-</script>
-
-<section class="name">
-	<div class="title">Jack McEvoy</div>
-	<div class="subtitle"><span class="accentTime" style="text-shadow: rgba(225,225,225,0.6) 0px 0px 20px;">Game</span> Developer</div>
-    <div class="rightArrow"><i class="fa fa-chevron-right"></i></div>
-    <div class="leftArrow"><i class="fa fa-chevron-left"></i></div>
-</section>
-<section class="about">
-	<div class="aboutContent">
-    	<div class="title">About</div>
-        <div class="bodyText">Lorem <span class="accentTime">ipsum</span> dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. <span class="accentTime">Fusce tempus</span> erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh.</div>
-        <img class="profilePic" src="https://media.licdn.com/dms/image/C4E03AQGfzwZh12-Dag/profile-displayphoto-shrink_800_800/0/1601317151703?e=2147483647&v=beta&t=1uPWiUSiQ3Jr3_EnqOZ9nkjuqTqehlQ7aN5HNhyd5BA"></img>
-    </div>
-    <div class="cslang">
-        	<ul>
-            	<li><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C# logo"></img></li>
-                <!--<li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="C++ logo"></img></li>-->
-                
-            </ul>
-    </div>
-</section>
-<section class="games" id="games">
-	<div class="title">Games</div>
-    <img class="sqirl" src="https://media.discordapp.net/attachments/857029806204780545/1123020889089376346/sqirl.png?width=1333&height=1170"></img>
-    <div class="game gottagobot">
-    	<img src="https://robogadgetgogogobot.files.wordpress.com/2023/04/cinematic.gif?w=600&zoom=2"></img>
-    	<div class="subtitle">Gotta Go-Bot</div>
-        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.<br><br>Role: Programmer, Designer<br>Contributions: -<br>Engine: -</div>
-        <br>
-        <button class="readMore">Read More</button>
-	</div>
-    <div class="game game2">
-    	<img src="https://media.licdn.com/dms/image/D5622AQH_CXs-h0ikJw/feedshare-shrink_800/0/1686932235501?e=1691020800&v=beta&t=x3WJPq6F201c-VbxWLSwMpQg8kX3ia6gtJsZnCwUWJI"></img>
-    	<div class="subtitle">Game2</div>
-        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.<br><br>Role: -<br>Contributions: -<br>Engine: -
-        </div>
-        <br>
-        <button class="readMore">Read More</button>
-	</div>
-    <div class="game game3">
-    	<img src="https://media.licdn.com/dms/image/D4E22AQHPSfVXhCOQRQ/feedshare-shrink_2048_1536/0/1684541621281?e=1691020800&v=beta&t=j4QbKZykydYOgmxEvPq7NIK3PC2LHIp1brwWN5UjOAU"></img>
-    	<div class="subtitle">Game3</div>
-        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.<br><br>Role: -<br>Contributions: -<br>Engine: -</div>
-        <br>
-        <button class="readMore">Read More</button>
-	</div>
-   <div class="game game4">
-    	<img src="https://media.licdn.com/dms/image/C4E22AQHM4yCQXIbaSA/feedshare-shrink_2048_1536/0/1677395117296?e=1691020800&v=beta&t=6ls3eiGbSgQUGrYcAJm8hk4_khBh9cbhM8JAA7-_l64"></img>
-    	<div class="subtitle">Game4</div>
-        <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta. Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo ornare, volutpat sem.<br><br>Role: -<br>Contributions: -<br>Engine: -</div>
-        <br>
-        <button class="readMore">Read More</button>
-	</div>
-</section>
-<section class="contact" id="contact">
-	<div class="title"><span class="accentTime">Interested?</span><br>Contact Me</div>
-    <div class="contactForm">eee</div>
-    
-</section>
-<script>
-$(document).ready(function() {
-  var links = [];
-  var currentLink = 0;
-
-  $.getJSON("https://skookuri.github.io/jackportfolio/carouselpics.json", function(data) {
-    links = data.PICS;
-    updateBackground();
-  });
-
-  $(".leftArrow").click(function() {
-    currentLink = (currentLink === 0) ? links.length - 1 : currentLink - 1;
-    updateBackground();
-  });
-
-  $(".rightArrow").click(function() {
-    currentLink = (currentLink === links.length - 1) ? 0 : currentLink + 1;
-    updateBackground();
-  });
-
-  function updateBackground() {
-    var imageUrl = "linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.5)), url('" + links[currentLink] + "')";
-    	$(".name").css( {
-    		background: imageUrl,
-      		"background-size": "cover",
-      		"background-repeat": "no-repeat",
-      		"background-attachment": "fixed",
-      		"background-position": "center top"
-    	});
-	}
-});
-
-$(document).ready(function() {
-	$(window).scroll(function() {
-    	var scrollPos = $(document).scrollTop();
-
-    	if (scrollPos > 570) {
-      		$(".nav").css("background-color", "var(--complementary)");
-      		$(".nav li a").css("color", "var(--dominant)");
-      		$(".homelink").fadeIn();
-            //$(".homelink").css("color", "var(--accent)");
-        } else {
-      		$(".nav").css({
-        		"background-color": "transparent",
-        		"border-bottom": "none"
-      		});
-      		$(".nav li a").css("color", "var(--dominant)");
-            $(".profilePic").css("z-index", "200");
-      		$(".homelink").fadeOut();
-    	}
-        
-        if (scrollPos > 570) {
-        	$(".profilePic").css("z-index", "initial");
+        .accentTime {
+            color: var(--accent);
         }
-  	});
 
-  	$(".nav li a").click(function() {
-    	$(".nav li a").removeClass("active");
-    	$(this).addClass("active");
-  	});
-});
-</script>
+        .contactForm {}
+
+        .game img {
+            max-width: 534px;
+            max-height: 400px;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            float: left;
+            padding: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .game img:hover {
+            opacity: 1;
+            transition: 0.3s;
+        }
+
+        .games .game:nth-child(odd) img {
+            float: right;
+        }
+
+        .bodyText {
+            font-family: "Arial", sans-serif;
+        }
+
+        .game .bodyText {
+            font-size: 20px;
+        }
+
+        .readMore {
+            color: var(--dominant);
+            background: transparent;
+            font-family: "Oswald", sans-serif;
+            border: 4px solid var(--accent);
+            font-size: 20px;
+            border-radius: 50px;
+            padding: 10px;
+
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .readMore:hover {
+
+            transition: 0.3s;
+            text-shadow: rgba(225, 225, 225, 1) 0px 0px 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" id="nav">
+        <ul>
+            <li class="homelink"><a href="#">Jade McEvoy</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a
+                    href="https://docs.google.com/document/d/1IzMg2mgzcVZdzDbY3fygcfHSSGEQRwZh8wWpAGAOLrk/edit?usp=sharing">Resume</a>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+            <a href="javascript:void(0);" class="icon" onclick="hamburgerTime()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </ul>
+    </div>
+
+    <script>
+        function hamburgerTime() {
+            var x = document.getElementById("nav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
+    </script>
+
+    <section class="name">
+        <div class="title">Jade McEvoy</div>
+        <div class="subtitle"><span class="accentTime"
+                style="text-shadow: rgba(225,225,225,0.6) 0px 0px 20px;">Game</span> Developer</div>
+        <div class="rightArrow"><i class="fa fa-chevron-right"></i></div>
+        <div class="leftArrow"><i class="fa fa-chevron-left"></i></div>
+    </section>
+    <section class="about">
+        <div class="aboutContent">
+            <div class="title">About</div>
+            <div class="bodyText">Lorem <span class="accentTime">ipsum</span> dolor sit amet, consectetur adipiscing
+                elit. Vestibulum aliquet ligula ex, sed scelerisque mauris pretium non. <span class="accentTime">Fusce
+                    tempus</span> erat a dui blandit faucibus. Suspendisse sed consequat nibh, ac consectetur leo.
+                Suspendisse blandit risus nibh.</div>
+            <img class="profilePic"
+                src="https://media.licdn.com/dms/image/C4E03AQGfzwZh12-Dag/profile-displayphoto-shrink_800_800/0/1601317151703?e=2147483647&v=beta&t=1uPWiUSiQ3Jr3_EnqOZ9nkjuqTqehlQ7aN5HNhyd5BA"></img>
+        </div>
+        <div class="cslang">
+            <ul>
+                <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C# logo"></img>
+                </li>
+                <!--<li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="C++ logo"></img></li>-->
+
+            </ul>
+        </div>
+    </section>
+    <section class="games" id="games">
+        <div class="title">Games</div>
+        <img class="sqirl"
+            src="https://media.discordapp.net/attachments/857029806204780545/1123020889089376346/sqirl.png?width=1333&height=1170"></img>
+        <div class="game gottagobot">
+            <img src="https://robogadgetgogogobot.files.wordpress.com/2023/04/cinematic.gif?w=600&zoom=2"></img>
+            <div class="subtitle">Gotta Go-Bot</div>
+            <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex,
+                sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat
+                nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta.
+                Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo
+                ornare, volutpat sem.<br><br>Role: Programmer, Designer<br>Contributions: -<br>Engine: -</div>
+            <br>
+            <button class="readMore">Read More</button>
+        </div>
+        <div class="game game2">
+            <img
+                src="https://media.licdn.com/dms/image/D5622AQH_CXs-h0ikJw/feedshare-shrink_800/0/1686932235501?e=1691020800&v=beta&t=x3WJPq6F201c-VbxWLSwMpQg8kX3ia6gtJsZnCwUWJI"></img>
+            <div class="subtitle">Game2</div>
+            <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex,
+                sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat
+                nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta.
+                Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo
+                ornare, volutpat sem.<br><br>Role: -<br>Contributions: -<br>Engine: -
+            </div>
+            <br>
+            <button class="readMore">Read More</button>
+        </div>
+        <div class="game game3">
+            <img
+                src="https://media.licdn.com/dms/image/D4E22AQHPSfVXhCOQRQ/feedshare-shrink_2048_1536/0/1684541621281?e=1691020800&v=beta&t=j4QbKZykydYOgmxEvPq7NIK3PC2LHIp1brwWN5UjOAU"></img>
+            <div class="subtitle">Game3</div>
+            <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex,
+                sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat
+                nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta.
+                Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo
+                ornare, volutpat sem.<br><br>Role: -<br>Contributions: -<br>Engine: -</div>
+            <br>
+            <button class="readMore">Read More</button>
+        </div>
+        <div class="game game4">
+            <img
+                src="https://media.licdn.com/dms/image/C4E22AQHM4yCQXIbaSA/feedshare-shrink_2048_1536/0/1677395117296?e=1691020800&v=beta&t=6ls3eiGbSgQUGrYcAJm8hk4_khBh9cbhM8JAA7-_l64"></img>
+            <div class="subtitle">Game4</div>
+            <div class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet ligula ex,
+                sed scelerisque mauris pretium non. Fusce tempus erat a dui blandit faucibus. Suspendisse sed consequat
+                nibh, ac consectetur leo. Suspendisse blandit risus nibh. Suspendisse malesuada enim eu mollis porta.
+                Fusce suscipit odio id ante egestas, et suscipit tellus malesuada. Etiam vel lorem ornare, luctus leo
+                ornare, volutpat sem.<br><br>Role: -<br>Contributions: -<br>Engine: -</div>
+            <br>
+            <button class="readMore">Read More</button>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="title"><span class="accentTime">Interested?</span><br>Contact Me</div>
+        <div class="contactForm">eee</div>
+
+    </section>
+    <script>
+        $(document).ready(function () {
+            var links = [];
+            var currentLink = 0;
+
+            $.getJSON("https://skookuri.github.io/jackportfolio/carouselpics.json", function (data) {
+                links = data.PICS;
+                updateBackground();
+            });
+
+            $(".leftArrow").click(function () {
+                currentLink = (currentLink === 0) ? links.length - 1 : currentLink - 1;
+                updateBackground();
+            });
+
+            $(".rightArrow").click(function () {
+                currentLink = (currentLink === links.length - 1) ? 0 : currentLink + 1;
+                updateBackground();
+            });
+
+            function updateBackground() {
+                var imageUrl = "linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.5)), url('" + links[currentLink] + "')";
+                $(".name").css({
+                    background: imageUrl,
+                    "background-size": "cover",
+                    "background-repeat": "no-repeat",
+                    "background-attachment": "fixed",
+                    "background-position": "center top"
+                });
+            }
+        });
+
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scrollPos = $(document).scrollTop();
+
+                if (scrollPos > 570) {
+                    $(".nav").css("background-color", "var(--complementary)");
+                    $(".nav li a").css("color", "var(--dominant)");
+                    $(".homelink").fadeIn();
+                    //$(".homelink").css("color", "var(--accent)");
+                } else {
+                    $(".nav").css({
+                        "background-color": "transparent",
+                        "border-bottom": "none"
+                    });
+                    $(".nav li a").css("color", "var(--dominant)");
+                    $(".profilePic").css("z-index", "200");
+                    $(".homelink").fadeOut();
+                }
+
+                if (scrollPos > 570) {
+                    $(".profilePic").css("z-index", "initial");
+                }
+            });
+
+            $(".nav li a").click(function () {
+                $(".nav li a").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
 </body>
+
 </html>
